@@ -44,7 +44,7 @@ Dataset splits have their own .csv file. Each file has 6 columns, described belo
 7. ```output``` encodes the output from the specific gameplay task.
 
 **2. Baseline Models**
-TODO
+Running ```train_all_best.sh``` will reproduce the best-performing models on the validation set. Additionally, models will be uploaded to HuggingFace Hub.
   
 ## *How do I cite this work?* 
 
