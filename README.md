@@ -1,6 +1,6 @@
 # Cultural Codes
 
-_Modeling Cross-Cultural Pragmatic Inference with Codenames Duet_
+This repository contains source code for the paper **Modeling Cross-Cultural Pragmatic Inference with Codenames Duet** by [Omar Shaikh*](https://oshaikh.com/), [Caleb Ziems*](https://calebziems.com/), [Will Held](https://williamheld.com/), [Aryan J. Pariani](https://www.linkedin.com/in/aryan-pariani/), [Fred Morstatter](https://www.isi.edu/~fredmors/), and [Diyi Yang](https://cs.stanford.edu/~diyiy/). Feel free to reach out to [Omar Shaikh](https://oshaikh.com/) with any questions!
 
 [[Read the Paper]](https://arxiv.org/pdf/2306.02475.pdf) | [[Download the Data]](https://github.com/SALT-NLP/codenames/tree/main/data) | [[Demo (coming soon!)]](https://github.com/SALT-NLP/codenames)
 
