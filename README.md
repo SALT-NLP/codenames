@@ -4,7 +4,7 @@ _Modeling Cross-Cultural Pragmatic Inference with Codenames Duet_
 
 [[Read the Paper]](https://arxiv.org/pdf/2306.02475.pdf) | [[Download the Data]](https://github.com/SALT-NLP/codenames/tree/main/data) | [[Demo (coming soon!)]](https://github.com/SALT-NLP/codenames)
 
-<img src="frontpage.png" alt="frontpage" width="650"/>
+<p align="center"><img src="frontpage.png" alt="frontpage" width="250"/></p>
 
 ## *Why Cross-Cultural Inference and Codenames?* 
 
@@ -26,13 +26,13 @@ Our dataset consists of 794 games with 7,703 turns, distributed across 153 uniqu
 Alongside gameplay, we collect information about players' personalities, values, and demographics. 
 We deconstruct games into 6 tasks, shown below.
 
-<img src="tasks.png" alt="tasks" width="650"/>
+<p align="center"><img src="tasks.png" alt="tasks" width="650"/></p>
 
-We additionally open-source our data collection code, including a modified Codenames Duet frontend and backend.
+We additionally open-source our data collection code, including a modified Codenames Duet frontend and backend. This is under the ```duet``` folder.
 
 ## *How do I run the baseline models?* 
 **1. Dataset Preparation**
-The datasets are under the data/ folder. Each task above is split into its own folder, named after each gameplay task above.
+The datasets are under the ```data``` folder. Each task above is split into its own folder, named after each gameplay task above.
 
 **2. Baseline Models**
 TODO
