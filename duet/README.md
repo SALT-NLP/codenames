@@ -1,0 +1,1 @@
+This folder contains a modified version of [jbowens/codenamesgreen](https://github.com/jbowens/codenamesgreen), with added endpoints to save and retrieve games, and to automatically pair and assign players specific player IDs.

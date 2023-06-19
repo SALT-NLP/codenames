@@ -1,0 +1,23 @@
+{
+  "name": "codenamesgreen",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:jbowens/codenamesgreen.git",
+  "author": "Jackson Owens <jackson_owens@alumni.brown.edu>",
+  "license": "MIT",
+  "devDependencies": {
+    "@parcel/transformer-elm": "^2.3.2",
+    "cssnano": "^4.1.10",
+    "elm": "^0.19.1-5",
+    "elm-hot": "^1.1.1",
+    "node-elm-compiler": "^5.0.4",
+    "parcel-bundler": "1.12.3"
+  },
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
+  "homepage": "https://Aryan-5401.github.io/codenamesgreen",
+  "dependencies": {
+    "gh-pages": "^3.2.3"
+  }
+}

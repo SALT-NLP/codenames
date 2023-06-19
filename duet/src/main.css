@@ -1,0 +1,543 @@
+body {
+  font-family: 'Source Sans Pro', 'Trebuchet MS', 'Lucida Grande', 'Bitstream Vera Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  color: #293c4b;
+}
+
+#layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 100vh;
+}
+
+#layout #header {
+  flex: none;
+}
+#layout #content {
+  flex: auto;
+  min-height: 0;
+  display: flex;
+}
+
+#header a {
+  text-decoration: none;
+  color: #000;
+}
+
+#header {
+  border-bottom: 1px #EEE solid;
+}
+
+h1, h2, h3 {
+  font-family: "Exo 2", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+h3 {
+  margin: 0;
+}
+
+#header h1 {
+  font-size: 2vh;
+  padding: 1vh;
+  margin: 0;
+}
+
+#not-found, #home {
+  text-align: center;
+  margin: 5vh 5vw;
+  padding: 1em;
+}
+
+@media screen and (min-width: 800px) {
+  #not-found, #home {
+	max-width: 600px;
+    margin: 5vh auto;
+  }
+}
+
+#home h1 {
+  font-size: 2em;
+}
+
+#home p {
+  margin: 2em 0;
+  line-height: 1.5em;
+  text-align: justify;
+}
+
+form#new-game {
+  margin: 3vh 3vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+form#new-game button {
+  flex: 1;
+  margin: 0.25em;
+  background: #b1e773;
+  padding: 1em 0.5em;
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+  font-size: 1em;
+  vertical-align: top;
+}
+
+form#new-game button:hover {
+  background: #c3f18d;
+}
+
+input#game-id {
+  flex: 5;
+  padding: 0.2em 0.5em;
+  font-size: 1.3em;
+  border: 1px #ddd solid;
+  letter-spacing: .1em;
+}
+
+#game-loading {
+  margin: 5vh;
+}
+
+#game {
+  display: flex;
+  flex-direction: row;
+  flex: auto;
+}
+
+#status {
+  flex: none;
+  font-family: "Exo 2", sans-serif;
+  display: flex;
+}
+
+#status div {
+  flex: auto;
+  display: flex;
+  margin: 0.5em;
+  align-items: center;
+}
+
+#status button.done-guessing {
+  font-size: 0.8em;
+}
+
+.green-icon {
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  background: #82b34a;
+  vertical-align: middle;
+  border-radius: 0.1em;
+  margin: 0 .3em;
+}
+
+#board {
+  flex: 0 0 50%;
+  font-size: 0.9em;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 0.5vw;
+}
+
+#board .cell {
+  background: #EEE;
+  text-align: center;
+  cursor: default;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#board .cell .word {
+  align-self: center;
+}
+
+#board.guessing .pickable:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+#board .green {
+  background: #82b34a;
+  color: #FFF;
+}
+
+#board .black {
+  background: black;
+  color: #FFF;
+}
+
+#board .time-token-a, #board .time-token-b {
+  position: absolute;
+  bottom: 0.25em;
+  color: #D2B48C;
+  font-size: 2vw;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  justify-content: center;
+}
+
+#board .time-token-a { left: 0.5vw; }
+#board .time-token-b { left: 2.5vw; }
+#board.no-team .time-token-a, #board.no-team .time-token-b {
+  display: none;
+}
+
+
+#sidebar {
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 1%;
+  min-height: 0;
+  max-height: 100%;
+}
+
+#join-a-team {
+  flex: 1;
+}
+
+#join-a-team .buttons {
+  display: flex;
+  width: 100%;
+}
+
+#join-a-team button {
+  flex: 1;
+  margin: 0.25em;
+  background: #b1e773;
+  padding: 1em;
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+#join-a-team button:hover {
+  background: #c3f18d;
+}
+
+#join-a-team button .call-to-action {
+  font-size: 2em;
+  display: block;
+}
+
+#key {
+  flex: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 1em;
+}
+
+#key-card, #key-list {
+  flex: auto;
+  cursor: pointer;
+}
+
+#key-card {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 0.5em;
+  max-width: 16em;
+}
+
+#key-list {
+  display: flex;
+  font-size: 0.9em;
+  font-weight: bold;
+  justify-content: space-between;
+}
+
+#key-list .crossed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+#key-list .greens { color: #82b34a; }
+#key-list .tans { color: #D2B48C; }
+#key-list ul {
+  flex: 0 0 auto;
+  padding: 0;
+  list-style: none;
+  margin: 0.5em;
+}
+
+#key-card .cell {
+  min-height: 2vh;
+  display: block;
+}
+
+#key-card .black {
+  background: #000;
+}
+#key-card .tan {
+  background: #D2B48C;
+}
+#key-card .green {
+  background: #82b34a;
+}
+#key-card .crossed.green {
+  background: linear-gradient(to top right, #82b34a calc(50% - 2px), #000, #82b34a calc(50% + 1px) );
+}
+
+#event-log {
+  font-size: 0.9em;
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+#events .side { color: #9d9d9d; }
+
+#events .system-message {
+  font-size: 0.8em;
+  color: #777;
+}
+
+#event-log #events {
+  flex: auto;
+  overflow-y: scroll;
+  padding: 0.5em;
+  border: 1px #EEE solid;
+}
+
+#event-log #events div {
+  padding: 0.25em 0;
+}
+#event-log .name {
+  font-weight: bold;
+}
+
+#chat-form {
+  /* flex: none; */
+  margin-top: 0.5em;
+  /* display: flex; */
+}
+#chat-form button {
+  flex: none;
+}
+#chat-form input {
+  /* flex: auto; */
+  padding: 0.25em;
+  font-size: 1em;
+  border-radius: 0.2em;
+  border: 1px #BBB solid;
+  margin-right: 0.5em;
+}
+#chat-form button, #button-row button, #status button {
+  font-family: "Exo 2", sans-serif;
+  font-size: 0.9em;
+  background: #b1e773;
+  padding: 0.5em;
+  border: none;
+  border-radius: 0.2em;
+  cursor: pointer;
+}
+
+#chat-form button:hover, #button-row button:hover, #status button:hover{
+  background: #c3f18d;
+}
+
+#chat-form button:disabled, #button-row button:disabled, #status button:disabled {
+  background: #b1e773;
+  cursor: default;
+}
+
+.chat-color {
+  font-weight: bold;
+}
+#event-log .green {
+  color: #82b34a;
+}
+#event-log .tan {
+  color: #D2B48C;
+}
+#event-log .black {
+  color: #000;
+}
+#button-row {
+  flex: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: top;
+  font-size: 0.8em;
+}
+
+#button-row div {
+  flex: none;
+  margin: 0.5em 0.5em 0 0;
+}
+
+#open-settings {
+  font-size: 2em;
+  cursor: pointer;
+}
+#open-settings:hover {
+  color: #709c3e;
+}
+
+.icon-button {
+  cursor: pointer;
+}
+.icon-button:hover {
+  color: #709c3e;
+}
+
+#settings .back-button {
+  font-size: 2em;
+}
+
+#settings .setting {
+  margin: 2em 1em;
+}
+#settings label {
+  display: block;
+  font-size: 0.9em;
+}
+#settings input {
+  margin: 1em;
+  font-size: 1.1em;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    font-size: 0.8em;
+  }
+}
+@media screen and (max-height: 500px) {
+  body {
+    font-size: 0.8em;
+  }
+  #key-list { font-size: 0.6em; }
+}
+
+@media (orientation: landscape) {
+  #sidebar {
+    max-width: 500px;
+  }
+  #board {
+    max-width: 800px;
+  }
+}
+@media (orientation: landscape) and (max-width: 1000px) {
+  #key-list { font-size: 0.8em; }
+}
+@media (orientation: landscape) and (max-width: 800px) {
+  #board { font-size: 0.8em; }
+}
+
+@media (orientation: portrait) {
+  #game {
+    flex-direction: column;
+  }
+
+  #board {
+    flex: none;
+    width: 100%;
+    height: 45%;
+    grid-auto-rows: auto;
+  }
+  #board .time-token-a, #board .time-token-b {
+    font-size: 2vh;
+  }
+  #board .time-token-a { left: 0.5vh; }
+  #board .time-token-b { left: 2.5vh; }
+
+  #sidebar {
+    flex: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 9fr;
+  }
+  #key-list {
+    flex-wrap: wrap;
+  }
+
+  #status {
+    order: 1;
+    min-width: 60%;
+  }
+  #button-row {
+    order: 2;
+    justify-content: flex-end;
+  }
+  #key {
+    order: 3;
+    margin: 1em 1em 1em 0;
+  }
+  #key-card {
+    max-height: 25vh;
+  }
+  #event-log {
+    order: 4;
+  }
+}
+@media (orientation: portrait) and (max-width: 400px) {
+  #key-list { font-size: 0.8em; }
+}
+
+@keyframes fadeIn {
+  99% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+.hidden-button {
+  animation: 120s fadeIn;
+  animation-fill-mode: forwards;
+  visibility: hidden;
+}
+
+.A-hidden-button {
+  animation: 120s fadeIn;
+  animation-fill-mode: forwards;
+  visibility: hidden;
+}
+
+.B-hidden-button {
+  animation: 120s fadeIn;
+  animation-fill-mode: forwards;
+  visibility: hidden;
+}
+
+#status .inactive-button {
+  background: #cd6c18;
+  color: white;
+}
+
+#status .inactive-button:hover {
+  background: #c58144 !important;
+  color: white;
+}
+
+
+/* The Modal (background) */
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
+}
