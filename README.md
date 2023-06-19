@@ -32,7 +32,16 @@ We additionally open-source our data collection code, including a modified Coden
 
 ## *How do I run the baseline models?* 
 **1. Dataset Preparation**
-The datasets are under the ```data``` folder. Each task above is split into its own folder, named after each gameplay task above.
+The datasets are under the ```data``` folder. Each task above is split into its own folder, named after each gameplay task above. 
+Dataset splits have their own .csv file. Each file has 6 columns, described below.
+
+1. ```base_text```: The ```base_text``` field properties of the game state, like words remaining on the board, avoid words, green words, etc. All below fields encode ```base_text```, and their additional values.
+2. ```leaning_only``` encodes variables about political leaning.
+3. ```event_only``` encodes demographic information collected from the UI (age, country of origin, native English speaker).
+4. ```demo_only``` encodes several more demographic variables (see paper for details).
+5. ```personality_only``` encodes results from the Big 5 personality traits.
+6. ```all_text``` encodes all variables from the above fields.
+7. ```output``` encodes the output from the specific gameplay task.
 
 **2. Baseline Models**
 TODO
